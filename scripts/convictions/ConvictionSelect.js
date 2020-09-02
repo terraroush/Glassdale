@@ -7,21 +7,19 @@ export const ConvictionSelect = () => {
     const convictionsArray = useConvictions();
     render(convictionsArray);
   });
-
-  const render = (convictionsCollection) => {
-    const crimeNames = convictionsCollection.map((crimeObj) => {
-      let crimeNameInArray = crimeObj.name;
-      return crimeNameInArray;
-    });
-    // console.log(crimeNames);
-    contentTarget.innerHTML = `
+};
+const render = (convictionsCollection) => {
+  const crimeNames = convictionsCollection.map((crimeObj) => {
+    let crimeNameInArray = crimeObj.name;
+    return crimeNameInArray;
+  });
+  const sortedArray = crimeNames.sort();
+  contentTarget.innerHTML = `
             <select class="dropdown" id="crimeSelect">
                 <option value="0">Please select a crime...</option>
-                ${convictionsCollection.map((crimeObj) => {
-                  const crime = crimeObj.name;
-                  return `<option>${crime}</option>`;
+                ${sortedArray.map((crimeStr) => {
+                  return `<option>${crimeStr}</option>`;
                 })}
             </select>
         `;
-  };
 };
