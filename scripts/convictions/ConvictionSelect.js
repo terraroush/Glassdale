@@ -3,16 +3,16 @@ import { useConvictions, getConvictions } from "./ConvictionProvider.js";
 const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector(".filters__crime");
 
-eventHub.addEventListener("change", event => {
-    if(event.target.id === "crimeSelect") {
-        const customEvent = new CustomEvent("crimeChosen", {
-            detail: {
-                crimeThatWasChosen: event.target.value
-            }
-        })
-        eventHub.dispatchEvent(customEvent)
-    }
-})
+eventHub.addEventListener("change", (event) => {
+  if (event.target.id === "crimeSelect") {
+    const customEvent = new CustomEvent("crimeChosen", {
+      detail: {
+        crimeThatWasChosen: event.target.value,
+      },
+    });
+    eventHub.dispatchEvent(customEvent);
+  }
+});
 
 const render = (convictionsCollection) => {
   const sortedArray = convictionsCollection.sort((a, b) => {
@@ -29,10 +29,8 @@ const render = (convictionsCollection) => {
 };
 
 export const ConvictionSelect = () => {
-    getConvictions().then(() => {
-      const convictionsArray = useConvictions();
-      render(convictionsArray);
-    });
-  };
-
- 
+  getConvictions().then(() => {
+    const convictionsArray = useConvictions();
+    render(convictionsArray);
+  });
+};
