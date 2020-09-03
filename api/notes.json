@@ -1,9 +1,34 @@
 {
-    "notes": [
-        {
-            "text": "I don't have an leads yet. No time for finding the perp with all these files to create.That is a randomly chosen name in the name value.",
-            "date": "09/02/2020",
-            "suspectName": "Jordane West"
-        }
-    ]
+  "notes": [
+    {
+      "text": "This is a fake lead about a lead but it's fake",
+      "date": "09/03/2020",
+      "suspectName": "Booy Collins",
+      "id": 1
+    },
+    {
+      "text": "I don't have an leads yet. No time for finding the perp with all these files to create.That is a randomly chosen name in the name value.",
+      "date": "09/02/2020",
+      "suspectName": "Jordane West",
+      "id": 2
+    },
+    {
+      "text": "test note. hoping it works",
+      "date": 1599159158332,
+      "suspectName": "Taurean Bins>Taurean Bins</option><option value=",
+      "id": 3
+    },
+    {
+      "text": "note test2",
+      "date": 1599159413261,
+      "suspectName": "Josh Hahn",
+      "id": 4
+    },
+    {
+      "text": "noteTest 3",
+      "date": 1599159523614,
+      "suspectName": "Rogelio Hills",
+      "id": 5
+    }
+  ]
 }

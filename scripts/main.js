@@ -10,3 +10,4 @@ NoteForm();
 CriminalList();
 ConvictionSelect();
 OfficerSelect();
+NoteForm();

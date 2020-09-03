@@ -1,20 +1,47 @@
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
+import { saveNote } from "./NoteDataProvider.js";
+
+const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector(".noteFormContainer");
 
-const render = () => {
+// this is an event listener on the save button:
+eventHub.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id === "saveNote") {
+    const noteContent = document.querySelector("#note-text");
+    const noteCriminal = document.querySelector("#note-criminalSelect");
+
+    if (noteCriminal.value !== "0") {
+      const newNote = {
+        text: noteContent.value,
+        date: Date.now(),
+        suspectName: noteCriminal.value,
+      };
+      saveNote(newNote);
+    } else {
+      window.alert("Choose a suspect");
+    }
+  }
+});
+
+const render = (criminalArray) => {
   contentTarget.innerHTML = `
-<label for="note-text">Notable</label>
-<input type="text" id="note-text">
+    <textarea id="note-text" placeholder="Put your note here"></textarea>
 
-<label for="note-date">Date</label>
-<input type="date" id="note-date">
+    <select class="dropdown" id="note-criminalSelect">
+        <option value="0">Please select a criminal...</option>
+        ${criminalArray
+          .map((criminalObj) => {
+            return `<option>${criminalObj.name}</option>`;
+          })
+          }
+    </select>
 
-<label for="note-suspectName">Suspect</label>
-<input type="text" id="note-suspectName">
-
-<button type="button" id="saveNote">Save Note</button>
-`;
+    <button type="button" id="saveNote">Save Note</button> 
+    `;
 };
 
 export const NoteForm = () => {
-  render();
+  getCriminals().then(() => {
+    render(useCriminals());
+  });
 };
