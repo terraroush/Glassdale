@@ -21,7 +21,7 @@ const render = (officerCollection) => {
     <select class="dropdown" id="officerSelect">
                 <option value="0">Please select an officer...</option>
                 ${officerCollection.map((officerObj) => {
-                  return `<option>${officerObj.name}</option>`;
+                  return `<option value="${officerObj.name}">${officerObj.name}</option>`;
                 })}
             </select>
     `;

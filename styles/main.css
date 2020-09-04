@@ -1,20 +1,52 @@
 body {
-  background-color: peachpuff;
+  background-color: rgb(240, 243, 236);
+  font-family: 'Roboto Mono', monospace;
 }
 
 .criminalsContainer {
+  background-color: #b2b5b3;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 .card-criminal {
-  border: dotted 1px black;
+  border: solid 2px rgb(164, 176, 168);
+  background-color: rgb(177, 209, 160);
   flex: 1 0 28%;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   max-width: 25%;
+}
+.infoBox {
+
+  padding: 5px;
+  background-color: rgb(243, 236, 225);
+}
+
+.noteListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #b2b5b3;
+  justify-content: space-around;
+
+}
+
+.note-card {
+  border: solid 2px rgb(153, 156, 154);
+  background-color: rgb(175, 209, 201);
+  flex: 1 0 28%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 18%;
+}
+.noteFormContainer {
+  background-color: rgb(124, 126, 125);
+  padding: 8px;
+  margin-bottom: 10px;
 }
 
 
