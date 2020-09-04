@@ -22,7 +22,7 @@ const render = (convictionsCollection) => {
             <select class="dropdown" id="crimeSelect">
                 <option value="0">Please select a crime...</option>
                 ${sortedArray.map((crimeObj) => {
-                  return `<option>${crimeObj.name}</option>`;
+                  return `<option value="${crimeObj.name}">${crimeObj.name}</option>`;
                 })}
             </select>
         `;
