@@ -5,14 +5,14 @@ const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("associatesClicked", (event) => {
   // display all associates for criminal
-  const targetCriminal = useCriminals().find((criminal) => {
+  const targetCriminal = useCriminals().find(criminal => {
     return criminal.id === parseInt(event.detail.chosenCriminal);
   });
 
   const alibiTarget = document.querySelector(
     `.alibiDialog--${targetCriminal.id}`
   );
-  const hTarget = document.querySelector("h4");
+  const hTarget = alibiTarget.querySelector("h4");
   
   if (alibiTarget.contains(hTarget)) {
       alibiTarget.innerHTML = "";
@@ -22,7 +22,7 @@ eventHub.addEventListener("associatesClicked", (event) => {
                 return `
                 <h4>${associate.name}</h4>
                 <div>${associate.alibi}</div>
-            `;
+            `
       })
       .join("")}`;
   }
