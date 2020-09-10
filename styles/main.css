@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
+
 }
 
 .card-criminal {
@@ -26,28 +26,35 @@ body {
   background-color: rgb(243, 236, 225);
 }
 
-.noteListContainer {
-  display: flex;
-  flex-wrap: wrap;
+.noteListContainer, .witnessContainer {
+  display: block;
+  /* flex-wrap: wrap; */
   background-color: #b2b5b3;
+  border: darkslategrey 1px solid;
   justify-content: space-around;
+  width: 20%;
+  padding: 5px;
+  /* margin: 5px; */
+  float: right;
 
 }
 
-.note-card {
+.note-card, .witness-card{
   border: solid 2px rgb(153, 156, 154);
   background-color: rgb(175, 209, 201);
-  flex: 1 0 28%;
+  /* flex: 1 0 28%; */
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  max-width: 18%;
+  
 }
 .noteFormContainer {
   background-color: rgb(124, 126, 125);
   padding: 8px;
   margin-bottom: 10px;
 }
+
+
 
 
 

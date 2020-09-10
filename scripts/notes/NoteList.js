@@ -10,7 +10,8 @@ const render = (noteCollection) => {
   let HTMLArray = noteCollection.map((noteObj) => {
     return NoteHTML(noteObj);
   });
-  contentTarget.innerHTML = HTMLArray.join("");
+  contentTarget.innerHTML = `<h2>Saved Notes</h2>
+  ` + HTMLArray.join("");
 };
 
 export const NoteList = () => {
