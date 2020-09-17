@@ -28,12 +28,10 @@ export const saveNote = (noteObj) => {
     },
     body: JSON.stringify(noteObj),
   })
-    .then((result) => {
-      console.log("ok, the notes are sent to the api, setting off a series of functions, back and forth between the api and the app");
+    .then(() => {
+      return getNotes()
+      
     })
-    // getNotes to update to the latest
-    .then(getNotes)
-    // tell something that this event happened
     .then(dispatchStateChangeEvent);
     
 };

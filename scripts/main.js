@@ -7,8 +7,7 @@ import { NoteList } from "./notes/NoteList.js";
 import { WitnessList } from "./witness/WitnessList.js";
 
 
-// OfficerList();
-NoteForm();
+OfficerList();
 CriminalList();
 ConvictionSelect();
 OfficerSelect();
