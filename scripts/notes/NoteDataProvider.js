@@ -20,7 +20,7 @@ export const useNotes = () => {
     return notes.slice();
 }
 
-export const saveNote = (noteObj) => {
+export const saveNote = noteObj => {
   return fetch("http://localhost:8088/notes", {
     method: "POST",
     headers: {
@@ -28,12 +28,16 @@ export const saveNote = (noteObj) => {
     },
     body: JSON.stringify(noteObj),
   })
-    .then((result) => {
-      console.log("ok, the notes are sent to the api, setting off a series of functions, back and forth between the api and the app");
+    .then(() => {
+      return getNotes() 
     })
-    // getNotes to update to the latest
-    .then(getNotes)
-    // tell something that this event happened
-    .then(dispatchStateChangeEvent);
-    
+    .then(dispatchStateChangeEvent);   
 };
+
+export const deleteNote = noteId => {
+  return fetch(`http://localhost:8088/notes/${noteId}`, {
+      method: "DELETE"
+  })
+      .then(getNotes)
+      .then(dispatchStateChangeEvent)
+}
