@@ -54,9 +54,7 @@ body {
   margin-bottom: 10px;
 }
 
-
-
-
-
-
-
+.grey {
+  background-color: #b2b5b3;
+  padding: 1.2em;
+}

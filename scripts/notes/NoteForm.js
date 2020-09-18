@@ -28,6 +28,7 @@ const render = (criminalArray) => {
   contentTarget.innerHTML = `
     <h3>Write a Note</h3>
     
+    <textarea id="note-text" placeholder="Put your note here"></textarea>
     <select class="dropdown" id="note-criminalSelect">
     <option value="0">Please select a criminal...</option>
     ${criminalArray
@@ -37,7 +38,6 @@ const render = (criminalArray) => {
     }
     </select>
     
-    <textarea id="note-text" placeholder="Put your note here"></textarea>
     <button type="button" id="saveNote-btn">Save Note</button> 
     
     `;

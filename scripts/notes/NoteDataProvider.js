@@ -20,7 +20,7 @@ export const useNotes = () => {
     return notes.slice();
 }
 
-export const saveNote = (noteObj) => {
+export const saveNote = noteObj => {
   return fetch("http://localhost:8088/notes", {
     method: "POST",
     headers: {
@@ -29,9 +29,15 @@ export const saveNote = (noteObj) => {
     body: JSON.stringify(noteObj),
   })
     .then(() => {
-      return getNotes()
-      
+      return getNotes() 
     })
-    .then(dispatchStateChangeEvent);
-    
+    .then(dispatchStateChangeEvent);   
 };
+
+export const deleteNote = noteId => {
+  return fetch(`http://localhost:8088/notes/${noteId}`, {
+      method: "DELETE"
+  })
+      .then(getNotes)
+      .then(dispatchStateChangeEvent)
+}

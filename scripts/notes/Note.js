@@ -6,6 +6,8 @@ export const NoteHTML = (noteObj) => {
           <div class="note-date">${new Date(noteObj.date).toLocaleDateString("en-US")}</div>
           <div class="note-text">${noteObj.text}</div>
         </div>
+        <button id="deleteNote--${noteObj.id}">Delete</button>
+
     </section>
     `;
 };
