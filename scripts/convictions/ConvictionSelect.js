@@ -29,7 +29,8 @@ const render = (convictionsCollection) => {
 };
 
 export const ConvictionSelect = () => {
-  getConvictions().then(() => {
+  getConvictions()
+  .then(() => {
     const convictionsArray = useConvictions();
     render(convictionsArray);
   });
